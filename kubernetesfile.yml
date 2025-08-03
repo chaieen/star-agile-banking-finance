@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Banking
+  name: banking
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Banking
+      app: banking
   template:
     metadata:
       labels:
-        app: Banking
+        app: banking
     spec:
       containers:
-        - name: Banking
+        - name: banking
           image: chaitra2492/chaieen
           ports:
             - containerPort: 8081
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Banking
+  name: banking
 spec:
   type: NodePort
   ports:
     - port: 8081
       targetPort: 8081
   selector:
-    app: Banking
+    app: banking
